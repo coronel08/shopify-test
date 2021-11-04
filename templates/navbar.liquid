@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="/styles/app.css" >
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" >
+    <!-- Required font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" >
+</head>
+<body>
+    <nav class="bg-gradient-to-r from-green-300 to-blue-300">
+    <div class="md:flex md:items-center md:justify-between px-6 py-3">
+        
+        <div class="flex items-center justify-between">
+            <!-- Logo for navbar -->
+            <a class="text-xl font-bold md:text-2xl hover:text-blue-900" href="/" > Brand </a>
+            <!-- Mobile Menu -->
+            <div class="flex md:hidden text-xl">
+                <button type="button" >
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- NavItems -->
+        <div class="flex md:self-end items-center h-12 lg:px-12 justify-between">
+            <a class="my-1 md:mx-4 md:my-0 hover:text-white" href="/"> Home </a>
+            <a class="my-1 md:mx-4 md:my-0 hover:text-white" href="#"> Shop </a>
+            <button class="bg-blue-700 hover:bg-purple-500 border-2 border-gray-900 rounded-lg py-1 px-3 text-white"> Logout </button>
+        </div>
+
+    </div>
+    </nav>
+
+</body>
+</html>
+
+
+
+
+{% block content %}
+{% endblock %}
+
+
+
+
+<!-- Footer section stickied to bottom -->
+<footer class="bg-gradient-to-r from-green-300 to-blue-300 text-gray-600 fixed inset-x-0 bottom-0">
+
+    <!-- Footer with Categories -->
+    <div class="container p-2 mx-auto flex flex-wrap md:flex-nowrap flex-col md:flex-row md:items-start">
+        <div class="flex flex-grow flex-wrap my-2 justify-evenly">
+            <div class="lg:w-1/3 md:w-1/2 px-4">
+                <h2 class=" title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                    CATEGORIES 1
+                </h2>
+                <nav class="list-none">
+                    <li>
+                        <a href="" class="text-gray-600 hover:text-gray-800">First Link</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-gray-600 hover:text-gray-800">Second Link</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-gray-600 hover:text-gray-800">Third Link</a>
+                    </li>
+                </nav>
+            </div>
+            <div class="lg:w-1/3 md:w-1/2 px-4">
+                <h2 class=" title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+                    CATEGORIES 2
+                </h2>
+                <nav class="list-none">
+                    <li>
+                        <a href="" class="text-gray-600 hover:text-gray-800">First Link</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-gray-600 hover:text-gray-800">Second Link</a>
+                    </li>
+                    <li>
+                        <a href="" class="text-gray-600 hover:text-gray-800">Third Link</a>
+                    </li>
+                </nav>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="w-80 flex-shrink-0 md:mx-0 mx-auto text-center py-4">
+            <p class=" flex title-font font-medium items-center justify-center text-gray-900">
+                <i class="fas fa-address-card fa-lg text-purple-500"></i>
+                <span class="ml-3 text-xl">Contact Us</span>
+            </p>
+            <p class="mt-2 text-sm text-gray-500">
+                <i class="fas fa-at text-purple-500"></i>
+                Email: Shopify@email.com
+            </p>
+            <p class="mt-2 text-sm text-gray-500">
+                <i class="far fa-building text-purple-500"></i>
+                Address: Los Angeles Ca, 90043
+            </p>
+        </div>    
+    </div>
+
+    <!-- Copyright Footer-->
+    <div class="">
+        <div class="container mx-auto p-4 flex flex-wrap flex-col sm:flex-row">
+            <p class="text-gray-500 text-sm text-center sm:text-left">
+                © 2021 Copyright: Fidel Coronel
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                <a href="" class="text-gray-500">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="ml-3 text-gray-500">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="ml-3 text-gray-500">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="" class="ml-3 text-gray-500">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="" class="ml-3 text-gray-500">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </span>
+        </div>
+    </div>
+
+</footer>
