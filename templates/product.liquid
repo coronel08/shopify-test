@@ -46,22 +46,17 @@
             </p>
 
             {% comment %} Select size section {% endcomment %}
-            <div class="py-2 md:py-8">
+            <div class="py-2 md:py-8 inline-flex">
                 <p class="font-semibold"> Sizing: </p>
-                <div class=grid grid-cols-4 lg:grid-cols-5 >
+                <select class="mx-4">
                     {% for option in product.variants %}
-                        <label class="cursor-pointer">
-                            <input class="" type="radio" name="option-{{options.options}}" value="{{option.options}}" {% if forloop.index == 1 %} checked {% endif %} data-variant-option>
-                            <span class="block border-2 rounded-md text-center">
-                                {{ option.options }}
-                            </span>
-                        </label>
+                        <option value={{ option.options }}> {{ option.options }} </option>
                     {% endfor %}
-                </div>
+                </select>
+                <button class="bg-blue-500 p-2 rounded text-white" type="button"> 
+                    Purchase 
+                </button>
             </div>
-
-            
-
         </div>
     </div>
 </div>
