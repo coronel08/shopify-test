@@ -1,54 +1,38 @@
 {% layout "navbar.liquid" %}
 
 {% block content %}
-<div class="grid grid-cols-12 gap-2">
+    <div class="flex">
+        <div class="flex w-5/6 justify-center">
+            <h1 class="text-4xl text-purple-500 font-bold uppercase m-4">
+                {{ product.title }}
+            </h1>
+        </div>
 
-    {% comment %} Start of top section {% endcomment %}
-    <div class="col-span-9 flex justify-center">
-        <h1 class="text-2xl text-red-500 font-bold uppercase m-8"> {{ product.title }} </h1>
+        <div class="flex-wrap w-1/6 m-2">
+            <p class="font-medium text-sm"> 
+                Category: 
+            </p>
+
+            {% comment %} This is the styled button for category {% endcomment %}
+            <button type="button" class="
+                p-1
+                text-blue-500 font-bold uppercase text-sm
+                border border-solid border-purple-500
+                hover:bg-purple-500 hover:text-white
+                rounded outline-none focus:outline-none
+                ease-linear transition-all duration-150
+                ">
+                    {% assign foo = product.handle | split:"-" %}
+                    {{ foo[0] }}
+            </button>
+        </div>   
     </div>
 
-    {% comment %} Category in top section {% endcomment %}
-    <div class="flex items-center justify-center col-span-3 mr-2">
-        <p class="absolute mb-12 hidden md:block"> Category: </p>
-        <button type="button" class="
-                        text-blue-500
-                        bg-transparent
-                        border border-solid border-purple-500
-                        hover:bg-purple-500 hover:text-white
-                        font-bold
-                        uppercase
-                        text-sm
-                        rounded
-                        outline-none
-                        focus:outline-none
-                        ease-linear
-                        transition-all
-                        duration-150
-                    ">
-            {{ product.handle | slice:0,-8 }}
-        </button>
-    </div>
-
-
-
-    <div class="col-span-9 flex justify-center">
-        <p> Test </p>
-    </div>
-    <div class="flex items-center justify-center col-span-3 mr-2">
-        <p class="absolute mb-12 hidden md:block"> Test: </p>
-    </div>
-</div>
-
-<p> {{ product.price }} </p>
 {% endblock %}
 
 
 
 
-
-
 {% for product in product %}
-<p> {{ product }}</p>
-</div>
+    <p> {{ product }}</p>
 {% endfor %}
