@@ -1,5 +1,6 @@
 const Hapi = require('@hapi/hapi')
 const Path = require('path')
+const fs = require('fs')
 const { Liquid } = require('liquidjs')
 const engine = new Liquid({
     root: ['templates/'],
@@ -37,7 +38,7 @@ const init = async () => {
 
     server.route({
         method: "GET",
-        path: "/{param}",
+        path: "/{param*}",
         handler: {
             directory: {
                 path: '.'
