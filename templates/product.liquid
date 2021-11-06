@@ -32,18 +32,26 @@
     {% comment %} Container for Image on left and price and description on right {% endcomment %}
     <div class="container mx-auto flex h-auto flex-col sm:flex-row"> 
 
-        <div class="ml-auto">
+        <div class="ml-auto lg:mr-24">
             {% for image in product.featured_image %}
                 <img src="{{image}}" alt="shoe image">
             {% endfor %}
         </div>
-        <div class="w-auto md:w-1/3 pb-2 text-center md:text-left">
+        <div class="w-auto md:w-2/3 lg:w-2/5 pb-2 text-center md:text-left">
             <p class="mt-4 font-semibold"> 
                 Price: {{ product.price }} 
             </p>
-            <p>
-                {{ product.description | truncate:150 }}
-            </p>
+            <div class="short-description">
+                <span>
+                    {{ product.description | truncate:150 }}
+                </span>
+            </div>
+            <div class="long-description">
+                <span>
+                    {{ product.description }}
+                </span>
+            </div>
+
 
             {% comment %} Select size section {% endcomment %}
             <div class="py-2 md:py-8 inline-flex">
