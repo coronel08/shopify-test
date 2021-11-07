@@ -2,19 +2,20 @@
 
 {% block content %}
 <div class="lg:container">
+
+
+    <!-- Title and Category -->
     <div class="flex ">
         <div class="justify-center md:justify-start">
             <h1 class="text-4xl text-purple-500 font-bold uppercase m-4">
                 {{ product.title }}
             </h1>
         </div>
-
         <div class="flex-wrap ml-auto m-2">
             <p class="font-medium text-sm"> 
                 Category: 
             </p>
-
-            {% comment %} This is the styled button for category {% endcomment %}
+            <!-- This is the styled button for category -->
             <button type="button" class="
                 p-1
                 text-blue-500 font-bold uppercase text-sm
@@ -29,14 +30,21 @@
         </div> 
     </div>
 
-    {% comment %} Container for Image on left and price and description on right {% endcomment %}
+
+
+    <!-- Container for Image on left and price and description on right -->
     <div class="container mx-auto flex h-auto flex-col md:flex-row"> 
 
+        <!-- Left Side with photos -->
         <div class="ml-auto lg:mr-24">
             {% for image in product.featured_image %}
                 <img src="{{image}}" alt="shoe image">
             {% endfor %}
         </div>
+
+         
+
+        <!-- Right Side with Price, Description, Purchase -->
         <div class="w-auto md:w-2/3 lg:w-2/5 pb-2 text-center md:text-left">
             <p class="mt-4 font-semibold"> 
                 Price: {{ product.price }} 
@@ -52,8 +60,7 @@
                 </span>
             </div>
 
-
-            {% comment %} Select size section {% endcomment %}
+            <!-- Select size section -->
             <div class="py-2 md:py-8 inline-flex">
                 <p class="font-semibold"> Sizing: </p>
                 <select class="mx-4">
@@ -67,6 +74,7 @@
             </div>
         </div>
     </div>
+
 </div>
 {% endblock %}
 
