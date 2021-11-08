@@ -1,7 +1,7 @@
 {% layout "navbar.liquid" %}
 
 {% block content %}
-<div class="lg:container">
+<div class="lg:container lg:mr-auto">
 
 
     <!-- Title and Category -->
@@ -32,23 +32,24 @@
 
 
 
-    <!-- Container for Image on left and price and description on right -->
-    <div class="container mx-auto flex h-auto flex-col md:flex-row"> 
+    <!-- Product section split into left and right on lg -->
+    <div class="flex flex-col lg:flex-row"> 
 
         <!-- Left Side with photos -->
-        <div class="ml-auto lg:mr-24">
+        <div class="lg:w-1/2 mx-2">
             {% for image in product.featured_image %}
-                <img src="{{image}}" alt="shoe image">
+                <img class="ml-auto md:mr-28 z-0" src="{{image}}" alt="shoe image">
             {% endfor %}
+            <div class="flex justify-around -mt-16 z-10">
+                <img class=" max-h-20 max-w-20" src={{ product.featured_image }} alt="shoe image">
+                <img class=" max-h-20 max-w-20" src={{ product.featured_image }} alt="shoe image">
+                <img class=" max-h-20 max-w-20" src={{ product.featured_image }} alt="shoe image">
+            </div>
         </div>
 
-         
 
-        <!-- Right Side with Price, Description, Purchase -->
-        <div class="w-auto md:w-2/3 lg:w-2/5 pb-2 text-center md:text-left">
-            <p class="mt-4 font-semibold"> 
-                Price: {{ product.price }} 
-            </p>
+        <!-- Right Side with Price, Description, Purchase items -->
+        <div class="lg:w-1/2 mx-2 my-auto">
             <div class="short-description">
                 <span>
                     {{ product.description | truncate:150 }}
@@ -61,26 +62,29 @@
             </div>
 
             <!-- Select size section -->
-            <div class="py-2 md:py-8 inline-flex">
-                <p class="font-semibold"> Sizing: </p>
-                <select class="mx-4">
-                    {% for option in product.variants %}
-                        <option value={{ option.options }}> {{ option.options }} </option>
-                    {% endfor %}
-                </select>
-                <button class="bg-blue-500 p-2 rounded text-white" type="button"> 
-                    Purchase 
-                </button>
+            <div class="flex py-4 justify-center items-center">
+                <div class="inline-block mx-16">
+                    <p class="font-bold"> Price: </p>
+                    <p> {{ product.price }} </p>
+                </div>
+                <div class="inline-block mx-4">
+                    <p class="font-semibold"> Sizing: </p>
+                    <select class="p-2">
+                        {% for option in product.variants %}
+                            <option value={{ option.options }}> {{ option.options }} </option>
+                        {% endfor %}                    
+                    </select>
+                </div>
+                <div class="mx-4">
+                    <button class="bg-blue-500 p-2 rounded text-white" type="button">
+                        Purchase
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 
+
+
 </div>
 {% endblock %}
-
-
-
-
-{% for product in product %}
-    <p> {{ product }}</p>
-{% endfor %}

@@ -1,3 +1,5 @@
+<!-- Shopify page done in tailwind html to template real thing -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,17 +7,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Test Shoe Store</title>
 
-    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
     <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css">
     <!-- Required font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <div class="min-h-screen flex flex-col justify-between">
+    <div class="min-h-screen flex flex-col justify-between bg-purple-300">
+
+        <!-- Nav Item -->
         <nav class="bg-gradient-to-r from-green-300 to-blue-300">
             <div class="md:flex md:justify-between px-6 py-3">
 
@@ -25,7 +29,7 @@
                         Brand
                     </a>
                     <!-- Mobile Menu -->
-                    <div class="flex md:hidden text-xl">
+                    <div class="md:hidden text-xl">
                         <button type="button">
                             <i class="fas fa-bars"></i>
                         </button>
@@ -38,27 +42,94 @@
                     <a class="my-1 md:mx-4 md:my-0 hover:text-white" href="#"> Shop </a>
                     <button
                         class="bg-blue-700 hover:bg-purple-500 border-2 border-gray-900 rounded-lg py-1 px-3 text-white">
-                        Logout 
+                        Logout
                     </button>
                 </div>
             </div>
         </nav>
 
 
+        <!-- Product Page Section -->
+        <section class="bg-blue-100 h-full">
+            <div class="lg:container lg:mr-auto">
 
-        <!-- Content section for product -->
+                <!-- Title and Category Top Section -->
+                <div class="flex">
+                    <div class="justify-center md:justify-start">
+                        <h1 class="text-4xl text-purple-500 font-bold uppercase m-4">
+                            Title
+                        </h1>
+                    </div>
+                    <div class="flex-wrap ml-auto m-2">
+                        <p class="font-medium text-sm">
+                            Category:
+                        </p>
+                        <!-- This is the styled button for category -->
+                        <button type="button" class="
+                        text-blue-500 font-bold uppercase text-sm
+                        border border-solid border-purple-500
+                        hover:bg-purple-500 hover:text-white
+                        rounded outline-none focus:outline-none
+                        ease-linear transition-all duration-150
+                    ">
+                            Shoes
+                        </button>
+                    </div>
+                </div>
 
-        <section class="h-full bg-white">
-            {% block content %}
-            {% endblock %}
+
+                <!-- Product Box Split into left and right on lg -->
+                <div class="flex flex-col lg:flex-row">
+
+                    <!-- Left Side Photos -->
+                    <div class="lg:w-1/2 bg-red-100 mx-2">
+                        <img class="ml-auto md:mr-28 z-0" src="./public/images/shoes.png" alt="shoe image">
+                        <div class="flex justify-around -mt-16 z-10">
+                            <img class=" max-h-20 max-w-20" src="./public/images/shoes.png" alt="shoe image">
+                            <img class=" max-h-20 max-w-20" src="./public/images/shoes.png" alt="shoe image">
+                            <img class=" max-h-20 max-w-20" src="./public/images/shoes.png" alt="shoe image">
+                        </div>
+                    </div>
+
+                    <!-- Right Side Description-->
+                    <div class="lg:w-1/2 bg-red-200 mx-2">
+                        <p class="font-semibold p-2">Description:
+                            <span class="font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. In
+                                architecto
+                                odit laudantium iure cupiditate ipsam. Excepturi ipsa adipisci ipsam omnis architecto
+                                non
+                                nostrum rerum quae sit, dolores tempora! Officia nobis ut natus asperiores quaerat, ex
+                                labore necessitatibus! A, ut explicabo!</span>
+                        </p>
+                        <div class="flex py-4 justify-center items-center">
+                            <div class="inline-block mx-16">
+                                <p class="font-bold"> Price: </p>
+                                <p> $160 </p>
+                            </div>
+                            <div class="inline-block mx-4">
+                                <p class="font-semibold"> Sizing: </p>
+                                <select class="p-2">
+                                    <option value="8"> 8 </option>
+                                </select>
+                            </div>
+                            <div class="mx-4">
+                                <button class="bg-blue-500 p-2 rounded text-white" type="button">
+                                    Purchase
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </section>
 
 
-        <!-- Footer section stickied to bottom -->
+
+        <!-- Footer Section -->
         <footer class="
-            bg-gradient-to-r from-green-300 to-blue-300 text-gray-600 static inset-x-0 bottom-0"
-        >
-        
+                bg-gradient-to-r from-green-300 to-blue-300 text-gray-600
+                static inset-x-0 bottom-0">
             <!-- Footer Categories Section -->
             <div class="container p-2 mx-auto flex flex-wrap md:flex-nowrap flex-col md:flex-row md:items-start">
                 <div class="flex flex-grow flex-wrap mx-auto my-2 justify-evenly max-w-xl">
@@ -137,6 +208,9 @@
             </div>
         </footer>
 
+
+
     </div>
 </body>
+
 </html>
