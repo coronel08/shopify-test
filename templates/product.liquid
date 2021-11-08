@@ -7,7 +7,7 @@
     <!-- Title and Category -->
     <div class="flex ">
         <div class="justify-center md:justify-start">
-            <h1 class="text-4xl text-purple-500 font-bold uppercase m-4">
+            <h1 class="text-4xl text-purple-500 font-bold uppercase m-4 underline">
                 {{ product.title }}
             </h1>
         </div>
@@ -40,14 +40,15 @@
             <img class="ml-auto md:mr-28 z-0" src="{{product.featured_image }}" alt="shoe image">
             <div class="flex justify-around -mt-16 z-10 overflow-scroll">
                 {% for image in product.images %}
-                    <img class="max-h-20 max-w-20 mx-8" src={{ image }} alt="shoe image">
+                    <img class="max-h-20 max-w-20 mx-4" src={{ image }} alt="shoe image">
                 {% endfor %}
             </div>
         </div>
 
 
-        <!-- Right Side with Price, Description, Purchase items -->
+        <!-- Right Side Section -->
         <div class="lg:w-1/2 mx-2 my-auto">
+            <!-- The description section responsive to screen, truncates text -->
             <div class="short-description">
                 <span>
                     {{ product.description | truncate:150 }}
@@ -59,11 +60,11 @@
                 </span>
             </div>
 
-            <!-- Select size section -->
+            <!-- Select size section, price, add to cart -->
             <div class="flex py-4 justify-center items-center">
                 <div class="inline-block mx-16">
                     <p class="font-bold"> Price: </p>
-                    <p> {{ product.price }} </p>
+                    <p> ${{ product.price | divided_by:100}} </p>
                 </div>
                 <div class="inline-block mx-4">
                     <p class="font-semibold"> Sizing: </p>
