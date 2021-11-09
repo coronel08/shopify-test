@@ -37,10 +37,10 @@
 
         <!-- Left Side with photos -->
         <div class="lg:w-1/2 mx-2 lg:ml-12">
-            <img class="ml-auto md:mr-28 z-0" src="{{product.featured_image }}" alt="shoe image">
+            <img id="photo" class="ml-auto md:mr-28 z-0" src="{{product.featured_image }}" alt="shoe image">
             <div class="flex justify-around -mt-16 z-10 overflow-scroll">
                 {% for image in product.images %}
-                    <img class="max-h-20 max-w-20 mx-4" src={{ image }} alt="shoe image">
+                    <img id="thumbnails" class="max-h-20 max-w-20 mx-4" src={{ image }} alt="shoe image">
                 {% endfor %}
             </div>
         </div>

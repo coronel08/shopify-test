@@ -22,3 +22,14 @@ addToCart.addEventListener("submit",(e) => {
     setTimeout(() => submit.innerText ="Purchase",1000)
     console.log(shoeValue)
 })
+
+
+
+// Change Large photo if thumbnail clicked
+let thumbnails = document.querySelectorAll("#thumbnails")
+for(thumbnail of thumbnails){
+    thumbnail.addEventListener( "click", function(e){
+        let photo = document.querySelector("#photo")
+        photo.src = this.src
+    })
+}
