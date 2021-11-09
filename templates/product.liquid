@@ -66,19 +66,21 @@
                     <p class="font-bold"> Price: </p>
                     <p> ${{ product.price | divided_by:100}} </p>
                 </div>
-                <div class="inline-block mx-4">
-                    <p class="font-semibold"> Sizing: </p>
-                    <select class="p-2">
-                        {% for option in product.variants %}
-                            <option value={{ option.options }}> {{ option.options }} </option>
-                        {% endfor %}                    
-                    </select>
-                </div>
-                <div class="mx-4">
-                    <button class="bg-blue-500 p-2 rounded text-white" type="button">
-                        Purchase
-                    </button>
-                </div>
+                <form action="/cart/add.js" id="add-to-cart" method="post">
+                    <div class="inline-block mx-4">
+                        <p class="font-semibold"> Sizing: </p>
+                        <select class="p-2" id="size-shoe">
+                            {% for option in product.variants %}
+                                <option value={{ option.options }}> {{ option.options }} </option>
+                            {% endfor %}                    
+                        </select>
+                        <button type="submit" id="submit"
+                            class="inline-block mx-4 bg-blue-500 p-2 rounded text-white"
+                        >
+                            Purchase
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
