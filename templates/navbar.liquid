@@ -25,7 +25,7 @@
                         Brand
                     </a>
                     <!-- Mobile Menu -->
-                    <div class="flex md:hidden text-xl">
+                    <div class="flex md:hidden text-xl" id="nav-button">
                         <button type="button">
                             <i class="fas fa-bars"></i>
                         </button>
@@ -33,12 +33,12 @@
                 </div>
 
                 <!-- NavItems -->
-                <div class="flex md:self-end items-center h-12 lg:px-12 justify-between">
+                <div class="flex hidden md:flex md:self-end items-center h-12 lg:px-12 justify-between" id="nav-items">
                     <a class="my-1 md:mx-4 md:my-0 hover:text-white" href="/"> Home </a>
                     <a class="my-1 md:mx-4 md:my-0 hover:text-white" href="#"> Shop </a>
                     <button
                         class="bg-blue-700 hover:bg-purple-500 border-2 border-gray-900 rounded-lg py-1 px-3 text-white">
-                        Logout 
+                        Cart 
                     </button>
                 </div>
             </div>
@@ -138,5 +138,11 @@
         </footer>
 
     </div>
+
+
+
+    <script src="/scripts/app.js" defer> </script>
+
+
 </body>
 </html>
