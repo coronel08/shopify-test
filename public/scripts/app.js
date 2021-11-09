@@ -30,6 +30,8 @@ let thumbnails = document.querySelectorAll("#thumbnails")
 for(thumbnail of thumbnails){
     thumbnail.addEventListener( "click", function(e){
         let photo = document.querySelector("#photo")
+        // Can use either this or e.target to get info
+        console.log(e.target.src)
         photo.src = this.src
     })
 }
