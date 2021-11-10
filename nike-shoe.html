@@ -15,12 +15,27 @@
     <!-- Required font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
         integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+
+
+    <style>
+        @media only screen and (min-width: 640px) {
+            .resized {
+                width: 100%;
+                height: 500px;
+                object-fit: cover;
+                object-position: 0% 50%;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
     <div class="lg:flex min-h-screen bg-gray-300">
         <!-- Left Section -->
         <section class="lg:w-4/6">
+
+            <!-- Nav Section -->
             <nav class="flex w-full h-20 bg-blue-100 justify-between items-center">
                 <p class="p-8"> Logo </p>
                 <div class="m-2 mr-24 inline-flex font-semibold">
@@ -31,6 +46,7 @@
                 </div>
             </nav>
 
+            <!-- Search and Save section -->
             <div class="flex mt-4 md:mt-12">
                 <div class="relative m-4">
                     <input class="rounded py-2 md:w-80 w-52 pl-10 focus:outline-none" type="text" placeholder="Boots">
@@ -44,49 +60,48 @@
                 </div>
             </div>
 
-            <main class="mb-36">
+            <!-- Body with Shoes -->
+            <main class="pb-12">
                 <div class="mt-8 hidden md:block">
                     <h2 class="ml-24 text-7xl">Sneakers</h2>
                     <h2 class="ml-60 text-5xl">with Style</h2>
                 </div>
                 <div class=" flex flex-col sm:flex-row text-center">
                     <div class="text-center">
-                        <img class="p-6"
+                        <img class="p-2 md:p-6"
                             src="https://images.footlocker.com/is/image/EBFL2/C4101100_a1?wid=2000&hei=2000&fmt=png-alpha"
                             alt="jordan">
-                            <div class="-mt-20 bg-white w-8/12 h-40 mx-auto">
-                                <h2 class="text-lg font-bold">Jordan Retro 4</h2>
-                                <div class="flex items-center justify-center">
-                                    <i class="fas fa-cart-plus fa-3x p-4"></i>
-                                    <p class="font-semibold">Add to Cart</p>
-                                </div>
-                                <p class="ml-auto mr-8 font-semibold text-red-700">USD: $160</p>
-                            </div>               
-                        </div>
-                    <div class="">
-                        <img class="p-6"
-                            src="https://images.footlocker.com/is/image/EBFL2/C9454100_a1?wid=2000&hei=2000&fmt=png-alpha"
-                            alt="nike"
-                        >
-                        <div class="-mt-20 bg-white w-8/12 h-40 mx-auto">
-                            <h2 class="text-lg font-bold ">Nike Air max</h2>
+                        <div class="-mt-12 bg-white w-8/12 h-40 mx-auto rounded-lg">
+                            <h2 class="text-lg font-bold">Jordan Retro 4</h2>
                             <div class="flex items-center justify-center">
-                                <i class="fas fa-cart-plus fa-3x p-4"></i>
-                                <p class="font-semibold">Add to Cart</p>
+                                <i class="fas fa-angle-double-right fa-3x p-4"></i>
+                                <p class="font-semibold">Select</p>
                             </div>
                             <p class="ml-auto mr-8 font-semibold text-red-700">USD: $160</p>
                         </div>
                     </div>
                     <div class="">
-                        <img class="p-6"
+                        <img class="p-2 md:p-6"
+                            src="https://images.footlocker.com/is/image/EBFL2/C9454100_a1?wid=2000&hei=2000&fmt=png-alpha"
+                            alt="nike">
+                        <div class="-mt-12 bg-white w-8/12 h-40 mx-auto rounded-lg">
+                            <h2 class="text-lg font-bold ">Nike Air max</h2>
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-angle-double-right fa-3x p-4"></i>
+                                <p class="font-semibold">Select</p>
+                            </div>
+                            <p class="ml-auto mr-8 font-semibold text-red-700">USD: $160</p>
+                        </div>
+                    </div>
+                    <div class="">
+                        <img class="p-2 md:p-6"
                             src="https://images.footlocker.com/is/image/EBFL2/A8726100_a1?wid=2000&hei=2000&fmt=png-alpha"
-                            alt="nike"
-                        >
-                        <div class="-mt-20 bg-white w-8/12 h-40 mx-auto">
+                            alt="nike">
+                        <div class="-mt-12 bg-white w-8/12 h-40 mx-auto rounded-lg">
                             <h2 class="text-lg font-bold ">Nike Air 90s</h2>
                             <div class="flex items-center justify-center">
-                                <i class="fas fa-cart-plus fa-3x p-4"></i>
-                                <p class="font-semibold">Add to Cart</p>
+                                <i class="fas fa-angle-double-right fa-3x p-4"></i>
+                                <p class="font-semibold">Select</p>
                             </div>
                             <p class="ml-auto mr-8 font-semibold text-red-700">USD: $120</p>
                         </div>
@@ -111,19 +126,62 @@
                         </span>
 
                     </div>
-                    <div class="flex">
-                        <img class="p-12 justify-center -mt-24"
+                    <div class="p-4">
+                        <img class="resized"
                             src="https://images.footlocker.com/is/image/EBFL2/A8726100_a1?wid=2000&hei=2000&fmt=png-alpha"
-                            alt="nike"
-                        >
+                            alt="nike">
                     </div>
                 </div>
 
                 <!-- Select Size and Add to Cart Section -->
+                <div class="h-2/6 bg-gray-900 pb-4">
+                    <div class="mx-4 md:mx-12 pb-4 text-white">
+                        <p class="p-4">Sizing</p>
+                        <div id="size-buttons" class="grid grid-cols-5 gap-4">
+                            <!-- Javascript buttons made  -->
+                        </div>
+                    </div>
+
+                    <!-- Purchase Cards -->
+                    <div class="flex w-5/6 h-32 mx-auto rounded justify-between items-center bg-white">
+                        <h2 class="text-lg font-bold p-4">Nike Air max</h2>
+                        <div class="inline-block ">
+                            <i class="fas fa-cart-plus fa-3x p-4"></i>
+                            <p class="font-semibold">Add to Cart</p>
+                        </div>
+                        <p class="mr-8 font-semibold text-red-700">USD: $160</p>
+                    </div>
+                </div>
+
+
+
 
             </div>
         </section>
     </div>
+
+
+    <script>
+
+        // Shoe Sizing Scripts
+        let sizes = [5, 5.5, 6.5, 7, 7.5, 9, 10.5, 11]
+        let sizeButtons = document.querySelector("#size-buttons")
+
+        function createButtons(size, parentElement) {
+            let btn = document.createElement("button")
+            btn.classList.add("h-12", "bg-gray-700")
+            btn.innerText = size
+            parentElement.appendChild(btn)
+        }
+
+        for (size of sizes) {
+            createButtons(size, sizeButtons)
+        }
+
+
+        // Change Shoe in Right Section 
+
+    </script>
 </body>
 
 </html>
