@@ -3,6 +3,8 @@ Shopify product page challenge for First and Third Developer position. Create a 
 
 The node app /index.js runs and handles the routes and rendering for the project.
 
+![Shopify](./public/images/shopify-project.png)
+![UI Shoes](./public/images/shoe-ui.png)
 
 ## Setup
 1. Clone repo and install dependencies `npm install`
